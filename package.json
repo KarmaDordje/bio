@@ -1,0 +1,30 @@
+{
+  "name": "bio-remake",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "lucide-react": "latest",
+    "framer-motion": "latest",
+    "clsx": "latest",
+    "tailwind-merge": "latest",
+    "class-variance-authority": "latest"
+  },
+  "devDependencies": {
+    "typescript": "5.x",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "4.x",
+    "postcss": "latest",
+    "eslint": "9.x"
+  }
+}
