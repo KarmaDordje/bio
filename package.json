@@ -24,6 +24,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "tailwindcss": "4.x",
+    "@tailwindcss/postcss": "latest",
     "postcss": "latest",
     "eslint": "9.x"
   }
