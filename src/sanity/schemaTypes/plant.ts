@@ -2,20 +2,27 @@ import { defineType, defineField } from 'sanity'
 
 export const plant = defineType({
   name: 'plant',
-  title: 'Roślina',
+  title: 'Plant',
   type: 'document',
   fields: [
-    defineField({ name: 'varietyName', title: 'Nazwa odmiany', type: 'string' }),
-    defineField({ name: 'species', title: 'Gatunek', type: 'string' }),
-    defineField({ name: 'latinName', title: 'Nazwa łacińska', type: 'string' }),
-    defineField({ name: 'characteristics', title: 'Charakterystyka', type: 'text' }),
+    defineField({ name: 'varietyName', title: 'Variety Name', type: 'string' }),
+    defineField({ name: 'species', title: 'Species', type: 'string' }),
+    defineField({ name: 'latinName', title: 'Latin Name', type: 'string' }),
+    defineField({ name: 'characteristics', title: 'Characteristics', type: 'text' }),
     defineField({
       name: 'category',
-      title: 'Kategoria',
+      title: 'Category',
       type: 'reference',
       to: [{ type: 'plantCategory' }],
     }),
-    defineField({ name: 'price', title: 'Cena (placeholder)', type: 'number' }),
-    defineField({ name: 'image', title: 'Zdjęcie', type: 'image', options: { hotspot: true } }),
+    defineField({ name: 'price', title: 'Price (Placeholder)', type: 'number' }),
+    defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
   ],
+  preview: {
+    select: {
+      title: 'varietyName',
+      subtitle: 'species',
+      media: 'image',
+    },
+  },
 })

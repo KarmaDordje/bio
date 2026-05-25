@@ -2,12 +2,12 @@ import { defineType, defineField } from 'sanity'
 
 export const plantCategory = defineType({
   name: 'plantCategory',
-  title: 'Kategoria Roślin',
+  title: 'Plant Category',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Tytuł',
+      title: 'Title',
       type: 'string',
     }),
     defineField({
