@@ -1,6 +1,48 @@
 import { VerticalLabel } from "@/components/VerticalLabel"
 import Link from "next/link"
 
+const locations = [
+  {
+    type: "Centrum Ogrodnicze",
+    city: "Bydgoszcz",
+    address: "ul. Grunwaldzka 84",
+    phone: "(0-52) 3212588",
+    email: "sklep@bio.com.pl"
+  },
+  {
+    type: "Szkółka Roślin",
+    city: "Bydgoszcz",
+    address: "ul. Szamarzewskiego 12 a",
+    phone: "(0-52) 3402812",
+    email: "szkolka@bio.com.pl"
+  },
+  {
+    type: "Centrum Ogrodnicze",
+    city: "Białe Błota",
+    address: "ul. Szubińska 87c",
+    phone: "tel./fax (0-52) 3814361",
+    email: "sklep@bio.com.pl"
+  }
+]
+
+const LocationItem = ({ type, city, address, phone, email }: typeof locations[0]) => (
+  <div className="mb-10 last:mb-0 group">
+    <div className="flex items-baseline gap-3 mb-2">
+      <span className="text-[9px] uppercase tracking-[0.25em] text-brand-green font-bold">{type}</span>
+      <span className="text-2xl font-serif font-bold">{city}</span>
+    </div>
+    <div className="space-y-1 text-sm text-white/50 group-hover:text-white/70 transition-colors leading-relaxed">
+      <p>{address}</p>
+      <p className="hover:text-brand-green transition-colors cursor-pointer">
+        {phone}
+      </p>
+      <p className="hover:text-brand-green transition-colors cursor-pointer">
+        {email}
+      </p>
+    </div>
+  </div>
+)
+
 export default function ContactPage() {
   return (
     <main className="flex min-h-screen bg-brand-cream overflow-x-hidden">
@@ -36,8 +78,10 @@ export default function ContactPage() {
             </svg>
           </div>
           
-          <div className="relative z-10">
-            {/* Locations will go here */}
+          <div className="relative z-10 max-w-md">
+            {locations.map((loc, idx) => (
+              <LocationItem key={idx} {...loc} />
+            ))}
           </div>
         </section>
       </div>
