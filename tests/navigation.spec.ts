@@ -5,15 +5,11 @@ test.describe('Navigation', () => {
     await page.goto('/');
     
     const navLinks = [
-      'Strona główna',
-      'Centrum ogrodnicze',
-      'Szkółka',
-      'Paliwa',
-      'Projekty',
-      'Oferta',
-      'Aktualności',
-      'O nas',
-      'Kontakt'
+      'Home',
+      'Garden',
+      'Bio Fuels',
+      'About',
+      'Contact'
     ];
 
     for (const label of navLinks) {
@@ -21,9 +17,15 @@ test.describe('Navigation', () => {
     }
   });
 
-  test('should navigate to O nas page', async ({ page }) => {
+  test('should navigate to Contact page', async ({ page }) => {
     await page.goto('/');
-    await page.locator('nav').getByRole('link', { name: 'O nas', exact: true }).click();
+    await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
+    await expect(page).toHaveURL('/contact');
+  });
+
+  test('should navigate to About page', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('nav').getByRole('link', { name: 'About', exact: true }).click();
     await expect(page).toHaveURL('/about');
   });
 });

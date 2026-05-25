@@ -72,14 +72,17 @@ export default function ContactPage() {
           initial={{ opacity: 0, x: -20 }} 
           animate={{ opacity: 1, x: 0 }} 
           transition={{ duration: 0.8 }}
-          className="flex-1 flex flex-col justify-center px-8 md:px-16 z-10"
+          className="flex-1 flex flex-col justify-center px-8 md:px-16 z-10 py-20"
         >
-          <nav className="absolute top-8 left-16 flex gap-8 text-[10px] font-bold tracking-[0.2em] text-brand-dark/40 uppercase">
+          <nav className="absolute top-8 left-8 md:left-16 flex gap-6 md:gap-8 text-[10px] font-bold tracking-[0.2em] text-brand-dark/40 uppercase">
             <Link href="/" className="hover:text-brand-dark transition-colors">Home</Link>
+            <Link href="/garden-center" className="hover:text-brand-dark transition-colors">Garden</Link>
+            <Link href="/fuel" className="hover:text-brand-dark transition-colors">Bio Fuels</Link>
+            <Link href="/about" className="hover:text-brand-dark transition-colors">About</Link>
             <Link href="/contact" className="text-brand-dark">Contact</Link>
           </nav>
 
-          <h1 className="font-serif text-5xl md:text-6xl font-bold text-brand-dark mb-6">
+          <h1 className="font-serif text-5xl md:text-6xl font-bold text-brand-dark mb-6 mt-12 md:mt-0">
             Zapraszamy <br />
             <span className="font-script text-brand-green/80 text-6xl lowercase">do kontaktu</span>
           </h1>
@@ -90,10 +93,10 @@ export default function ContactPage() {
         </motion.section>
 
         {/* Right Side (Dark Area) */}
-        <section className="w-full md:w-[50%] bg-brand-dark relative flex flex-col justify-center px-12 md:px-20 text-white min-h-[500px]">
+        <section className="w-full md:w-[50%] bg-brand-dark relative flex flex-col justify-center px-12 md:px-20 text-white min-h-[500px] py-20">
           {/* Organic Wave Layer */}
-          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <svg className="absolute top-0 -left-[150px] h-full w-[calc(100%+150px)]" preserveAspectRatio="none" viewBox="0 0 100 100">
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <svg className="absolute top-0 -left-[100px] md:-left-[150px] h-full w-[calc(100%+100px)] md:w-[calc(100%+150px)]" preserveAspectRatio="none" viewBox="0 0 100 100">
               <path 
                 d="M100,0 L100,100 L40,100 C55,80 65,65 45,50 C25,35 35,20 50,0 Z" 
                 fill="#102a28" 
