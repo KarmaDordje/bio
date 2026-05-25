@@ -1,5 +1,8 @@
+"use client"
+
 import { VerticalLabel } from "@/components/VerticalLabel"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 const locations = [
   {
@@ -25,8 +28,23 @@ const locations = [
   }
 ]
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+}
+
 const LocationItem = ({ type, city, address, phone, email }: typeof locations[0]) => (
-  <div className="mb-10 last:mb-0 group">
+  <motion.div variants={item} className="mb-10 last:mb-0 group">
     <div className="flex items-baseline gap-3 mb-2">
       <span className="text-[9px] uppercase tracking-[0.25em] text-brand-green font-bold">{type}</span>
       <span className="text-2xl font-serif font-bold">{city}</span>
@@ -40,7 +58,7 @@ const LocationItem = ({ type, city, address, phone, email }: typeof locations[0]
         {email}
       </p>
     </div>
-  </div>
+  </motion.div>
 )
 
 export default function ContactPage() {
@@ -50,7 +68,12 @@ export default function ContactPage() {
       
       <div className="flex-1 flex flex-col md:flex-row relative">
         {/* Left Side (Light) */}
-        <section className="flex-1 flex flex-col justify-center px-8 md:px-16 z-10">
+        <motion.section 
+          initial={{ opacity: 0, x: -20 }} 
+          animate={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 0.8 }}
+          className="flex-1 flex flex-col justify-center px-8 md:px-16 z-10"
+        >
           <nav className="absolute top-8 left-16 flex gap-8 text-[10px] font-bold tracking-[0.2em] text-brand-dark/40 uppercase">
             <Link href="/" className="hover:text-brand-dark transition-colors">Home</Link>
             <Link href="/contact" className="text-brand-dark">Contact</Link>
@@ -64,7 +87,7 @@ export default function ContactPage() {
             Nasze centra ogrodnicze oraz szkółka są do Państwa dyspozycji sześć dni w tygodniu. 
             Z przyjemnością pomożemy w doborze roślin i doradzimy w pielęgnacji ogrodu.
           </p>
-        </section>
+        </motion.section>
 
         {/* Right Side (Dark Area) */}
         <section className="w-full md:w-[50%] bg-brand-dark relative flex flex-col justify-center px-12 md:px-20 text-white min-h-[500px]">
@@ -78,11 +101,16 @@ export default function ContactPage() {
             </svg>
           </div>
           
-          <div className="relative z-10 max-w-md">
+          <motion.div 
+            initial="hidden" 
+            animate="show" 
+            variants={container}
+            className="relative z-10 max-w-md"
+          >
             {locations.map((loc, idx) => (
               <LocationItem key={idx} {...loc} />
             ))}
-          </div>
+          </motion.div>
         </section>
       </div>
     </main>
