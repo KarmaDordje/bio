@@ -11,6 +11,7 @@ export function PlantCard({ plant }: { plant: Plant }) {
             src={plant.imageUrl} 
             alt={plant.varietyName} 
             fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500" 
           />
         )}
@@ -24,7 +25,10 @@ export function PlantCard({ plant }: { plant: Plant }) {
       </div>
       <div className="flex justify-between items-center mt-6">
         <span className="font-bold text-[#102a28] text-lg">${plant.price.toFixed(2)}</span>
-        <button className="size-10 bg-[#102a28] rounded-full flex items-center justify-center text-white hover:bg-[#2d5a27] transition-colors">
+        <button 
+          className="size-10 bg-[#102a28] rounded-full flex items-center justify-center text-white hover:bg-[#2d5a27] transition-colors"
+          aria-label={`View details for ${plant.species} ${plant.varietyName}`}
+        >
           <ArrowRight className="size-5" />
         </button>
       </div>
