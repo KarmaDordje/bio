@@ -24,9 +24,21 @@ export default function ContactPage() {
           </p>
         </section>
 
-        {/* Right Side (Placeholder for Dark Area) */}
-        <section className="w-full md:w-[50%] bg-brand-dark relative">
-          {/* Wave will go here */}
+        {/* Right Side (Dark Area) */}
+        <section className="w-full md:w-[50%] bg-brand-dark relative flex flex-col justify-center px-12 md:px-20 text-white min-h-[500px]">
+          {/* Organic Wave Layer */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <svg className="absolute top-0 -left-[150px] h-full w-[calc(100%+150px)]" preserveAspectRatio="none" viewBox="0 0 100 100">
+              <path 
+                d="M100,0 L100,100 L40,100 C55,80 65,65 45,50 C25,35 35,20 50,0 Z" 
+                fill="#102a28" 
+              />
+            </svg>
+          </div>
+          
+          <div className="relative z-10">
+            {/* Locations will go here */}
+          </div>
         </section>
       </div>
     </main>
