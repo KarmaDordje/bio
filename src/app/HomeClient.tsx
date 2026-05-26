@@ -1,10 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram, Facebook, Mail } from "lucide-react"
+import { Instagram, Facebook, Mail, TreePine, Star, MapPin, MessageCircle, Heart } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { VerticalLabel } from "@/components/VerticalLabel"
 
 export function HomeClient() {
   return (
@@ -57,8 +56,67 @@ export function HomeClient() {
 
         {/* Hero UI Container */}
         <div className="container relative z-20 flex h-full flex-col px-4 pt-[2rem]">
-          {/* Left Side Decoration & Info (Hidden on mobile for cleaner look) */}
-          <VerticalLabel isAbsolute className="hidden lg:flex" />
+          {/* Left Side Trust Sidebar */}
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-10 items-start pointer-events-none">
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center gap-4 group">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-brand-dark/5 transition-all group-hover:bg-brand-dark group-hover:text-white">
+                  <TreePine className="size-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-brand-dark">500+ gatunków</span>
+                  <span className="text-[9px] text-brand-dark/40 font-medium uppercase leading-tight">Roślin w ofercie</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 group">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-brand-dark/5 transition-all group-hover:bg-brand-dark group-hover:text-white">
+                  <Star className="size-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-brand-dark">Zaufanie</span>
+                  <span className="text-[9px] text-brand-dark/40 font-medium uppercase leading-tight">Opinie klientów</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 group">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-brand-dark/5 transition-all group-hover:bg-brand-dark group-hover:text-white">
+                  <MapPin className="size-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-brand-dark">Lokalna uprawa</span>
+                  <span className="text-[9px] text-brand-dark/40 font-medium uppercase leading-tight">Bydgoszcz & Białe Błota</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 group">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-brand-dark/5 transition-all group-hover:bg-brand-dark group-hover:text-white">
+                  <MessageCircle className="size-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-brand-dark">Doradztwo</span>
+                  <span className="text-[9px] text-brand-dark/40 font-medium uppercase leading-tight">Ekspercka wiedza</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 group">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-brand-dark/5 transition-all group-hover:bg-brand-dark group-hover:text-white">
+                  <Heart className="size-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-brand-dark">Rodzinna firma</span>
+                  <span className="text-[9px] text-brand-dark/40 font-medium uppercase leading-tight">Pasja od 1978 roku</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 pl-4 opacity-30">
+              <div className="h-20 w-[1px] bg-brand-dark" />
+              <span className="[writing-mode:vertical-lr] text-[9px] font-bold tracking-[0.5em] text-brand-dark uppercase rotate-180">
+                Poczuj naturę
+              </span>
+            </div>
+          </div>
 
           {/* Content Overlay - Centered on mobile, Right-aligned on desktop */}
           <div className="mt-20 mx-auto md:ml-auto md:mr-0 max-w-md text-center md:mt-32">
@@ -84,12 +142,11 @@ export function HomeClient() {
             <div className="mt-8 md:mt-12 flex flex-col gap-4 items-center">
               <Link
                 href="/garden-center"
-                className="group relative w-full overflow-hidden rounded-full border border-white/30 bg-white/10 p-[1px] shadow-2xl transition-all hover:border-white/50 active:scale-95"
+                className="group relative w-auto overflow-hidden rounded-full border-2 border-brand-cream/50 bg-white/10 shadow-2xl transition-all hover:border-brand-cream hover:scale-[1.02] active:scale-95"
               >
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-white/10 px-8 py-4 backdrop-blur-2xl transition-all group-hover:bg-white/20">
-                  <span className="text-xs font-bold tracking-[0.3em] uppercase">
-                    <span className="text-white">Centrum</span>{" "}
-                    <span className="text-white">Ogrodnicze</span>
+                <div className="flex h-full w-full items-center justify-center rounded-full bg-brand-green/20 px-12 py-5 backdrop-blur-2xl transition-all group-hover:bg-brand-green/40">
+                  <span className="text-sm font-bold tracking-[0.4em] uppercase text-white drop-shadow-sm">
+                    Poznaj rośliny
                   </span>
                 </div>
               </Link>

@@ -25,7 +25,7 @@ export default async function GardenCenterPage() {
       
       <div>
         {/* Hero Section */}
-        <section className="relative h-[50vh] md:h-[70vh] w-full flex items-center overflow-hidden">
+        <section className="relative h-[35vh] md:h-[50vh] w-full flex items-center overflow-hidden">
           <Image
             src="/images/garden-hero.png"
             alt="Plant Nursery Hero"
@@ -35,25 +35,25 @@ export default async function GardenCenterPage() {
             unoptimized
           />
           <div className="container relative z-10 mx-auto px-6">
-            <header className="max-w-2xl">
-              <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
+            <header className="max-w-2xl mt-8 md:mt-0">
+              <h1 className="font-serif text-2xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 leading-tight">
                 Siła roślin <br />
                 <span className="text-brand-cream/80">dla Twojej przestrzeni</span>
               </h1>
-              <p className="text-white/80 text-base md:text-xl max-w-lg mb-0 md:mb-10 leading-relaxed">
+              <p className="hidden md:block text-white/80 text-base md:text-lg max-w-lg mb-0 md:mb-6 leading-relaxed">
                 Znajdź idealne rośliny i dodatki do swojego otoczenia. 
                 Nasza szkółka oferuje najwyższej jakości tuje, sosny oraz rośliny sezonowe.
               </p>
             </header>
           </div>
           {/* Gradient Transition to Content */}
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#102a28] to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 w-full h-24 md:h-28 bg-gradient-to-t from-[#102a28] to-transparent z-10" />
         </section>
 
         {/* Grid Content */}
-        <div className="container mx-auto px-4 py-12 md:py-24">
-          <div className="mb-8 md:mb-12">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-2">Poznaj nasze asortyment</h2>
+        <div className="container mx-auto px-4 py-8 md:py-16">
+          <div className="mb-6 md:mb-10">
+            <h2 className="font-serif text-xl md:text-2xl font-bold mb-2">Poznaj nasz asortyment</h2>
             <div className="h-1 w-12 bg-[#2d5a27]" />
           </div>
           <GardenGrid initialPlants={plants} categories={categories} />

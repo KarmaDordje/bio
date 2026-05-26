@@ -75,7 +75,7 @@ export function AboutClient() {
         </motion.section>
 
         {/* Right Side (Dark Area) */}
-        <section className="w-full md:w-[45%] bg-[#102a28] relative flex flex-col justify-end overflow-hidden min-h-[500px]">
+        <section className="w-full md:w-[55%] bg-[#102a28] relative flex flex-col justify-end overflow-hidden min-h-[500px]">
           {/* Organic Wave Layer (Desktop only) */}
           <div className="absolute inset-0 z-0 pointer-events-none hidden md:block">
             <svg className="absolute top-0 -left-[100px] md:-left-[150px] h-full w-[calc(100%+100px)] md:w-[calc(100%+150px)]" preserveAspectRatio="none" viewBox="0 0 100 100">

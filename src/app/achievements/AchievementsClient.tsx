@@ -144,8 +144,8 @@ export function AchievementsClient() {
           </div>
         </motion.section>
 
-        {/* Right Side (Dark Area) - Decorative */}
-        <section className="hidden md:flex w-[35%] bg-[#102a28] relative flex-col justify-end overflow-hidden">
+        {/* Right Side (Dark Area) - Decorative (Desktop only) */}
+        <section className="hidden md:flex w-[55%] bg-[#102a28] relative flex-col justify-end overflow-hidden">
           {/* Organic Wave Layer */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <svg className="absolute top-0 -left-[100px] h-full w-[calc(100%+100px)]" preserveAspectRatio="none" viewBox="0 0 100 100">

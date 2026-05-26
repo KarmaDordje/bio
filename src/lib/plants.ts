@@ -37,15 +37,27 @@ export async function getPlants(): Promise<Plant[]> {
 export async function getPaginatedPlants(
   category: string = "All",
   page: number = 1,
-  limit: number = 12
+  limit: number = 12,
+  search: string = ""
 ): Promise<Plant[]> {
   const start = (page - 1) * limit;
   const end = start + limit;
 
-  const categoryFilter = category !== "All" ? `&& category->title == "${category}"` : "";
+  let filters = [`_type == "plant"`];
+  
+  if (category !== "All") {
+    filters.push(`category->title == "${category}"`);
+  }
+  
+  if (search) {
+    const s = search.toLowerCase();
+    filters.push(`(species match "*${s}*" || varietyName match "*${s}*" || latinName match "*${s}*")`);
+  }
+
+  const filterString = filters.join(" && ");
 
   try {
-    const query = `*[_type == "plant" ${categoryFilter}] | order(species asc, varietyName asc) [${start}...${end}] {
+    const query = `*[${filterString}] | order(species asc, varietyName asc) [${start}...${end}] {
       _id,
       varietyName,
       species,
