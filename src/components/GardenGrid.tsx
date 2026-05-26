@@ -7,9 +7,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Search } from "lucide-react";
 
-export function GardenGrid({ initialPlants, categories }: { initialPlants: Plant[], categories: Category[] }) {
+export function GardenGrid({ 
+  initialPlants, 
+  categories,
+  initialCategory = "Wszystkie"
+}: { 
+  initialPlants: Plant[], 
+  categories: Category[],
+  initialCategory?: string
+}) {
   const [plants, setPlants] = useState<Plant[]>(initialPlants);
-  const [activeCategory, setActiveCategory] = useState("Wszystkie");
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState("");
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(initialPlants.length === 12);

@@ -13,9 +13,17 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function GardenCenterPage() {
+export default async function GardenCenterPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ cat?: string }>;
+}) {
+  const { cat } = await searchParams;
+  const initialCategoryName = cat ? decodeURIComponent(cat) : "Wszystkie";
+  const initialCategoryQuery = initialCategoryName === "Wszystkie" ? "All" : initialCategoryName;
+
   const [plants, categories] = await Promise.all([
-    getPaginatedPlants("All", 1, 12),
+    getPaginatedPlants(initialCategoryQuery, 1, 12),
     getCategories(),
   ]);
 
@@ -56,7 +64,7 @@ export default async function GardenCenterPage() {
             <h2 className="font-serif text-xl md:text-2xl font-bold mb-2">Poznaj nasz asortyment</h2>
             <div className="h-1 w-12 bg-[#2d5a27]" />
           </div>
-          <GardenGrid initialPlants={plants} categories={categories} />
+          <GardenGrid initialPlants={plants} categories={categories} initialCategory={initialCategoryName} />
         </div>
       </div>
     </main>

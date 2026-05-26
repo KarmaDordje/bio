@@ -48,7 +48,7 @@ export function Navigation() {
                   className={cn(
                     "relative px-5 py-2.5 rounded-full text-[11px] lg:text-[12px] font-extrabold tracking-[0.25em] uppercase transition-all duration-300",
                     isActive 
-                      ? "text-[#102a28] shadow-md" 
+                      ? "text-[#102a28] bg-brand-cream shadow-md" 
                       : "text-white/60 hover:text-white hover:bg-white/10"
                   )}
                 >
