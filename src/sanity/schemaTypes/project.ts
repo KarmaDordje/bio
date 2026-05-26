@@ -21,5 +21,10 @@ export const project = defineType({
       type: 'array',
       of: [{ type: 'image', options: { hotspot: true } }],
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    }),
   ],
 })

@@ -23,5 +23,10 @@ export const about = defineType({
       type: 'image',
       options: { hotspot: true },
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    }),
   ],
 })

@@ -1,8 +1,17 @@
 import { getPaginatedPlants, getCategories } from "@/lib/plants";
 import { GardenGrid } from "@/components/GardenGrid";
 import Image from "next/image";
-import { Navigation } from "@/components/Navigation";
 import { VerticalLabel } from "@/components/VerticalLabel";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Centrum Ogrodnicze - Oferta Roślin",
+  description: "Odkryj bogatą ofertę roślin ozdobnych: iglaki, krzewy liściaste, byliny i pnącza. Ponad 350 odmian dostępnych w naszych centrach ogrodniczych.",
+  openGraph: {
+    title: "Oferta Roślin - Szkółka Bilscy",
+    description: "Szeroki asortyment krzewów ozdobnych i drzew do Twojego ogrodu.",
+  }
+}
 
 export default async function GardenCenterPage() {
   const [plants, categories] = await Promise.all([
@@ -12,7 +21,7 @@ export default async function GardenCenterPage() {
 
   return (
     <main className="min-h-screen bg-[#102a28] text-[#f7f0f0] relative">
-      <VerticalLabel isAbsolute className="border-white/5" />
+      <VerticalLabel isAbsolute className="border-white/5 hidden lg:flex" />
       
       <div>
         {/* Hero Section */}

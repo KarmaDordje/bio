@@ -38,5 +38,10 @@ export const news = defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    }),
   ],
 })

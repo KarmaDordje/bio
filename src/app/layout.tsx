@@ -24,8 +24,18 @@ const script = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Bio Remake",
-  description: "Modern gardening and bio-fuel sales",
+  title: {
+    template: "%s | Bilscy.pl - Szkółka Krzewów Ozdobnych",
+    default: "Bilscy.pl - Szkółka Krzewów Ozdobnych i Biopaliwa",
+  },
+  description: "Profesjonalna szkółka krzewów ozdobnych z tradycją od 1978 roku. Oferujemy ponad 350 odmian roślin iglastych i liściastych oraz wysokiej jakości biopaliwa.",
+  keywords: ["szkółka roślin", "krzewy ozdobne", "iglaki", "rośliny liściaste", "biopaliwa", "pellet", "ogród"],
+  openGraph: {
+    type: "website",
+    locale: "pl_PL",
+    url: "https://bilscy.pl",
+    siteName: "Bilscy.pl",
+  },
 };
 
 export default function RootLayout({

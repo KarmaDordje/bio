@@ -17,6 +17,11 @@ export const plant = defineType({
     }),
     defineField({ name: 'price', title: 'Price (Placeholder)', type: 'number' }),
     defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    }),
   ],
   preview: {
     select: {

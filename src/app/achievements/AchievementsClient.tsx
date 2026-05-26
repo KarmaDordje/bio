@@ -79,13 +79,13 @@ const item = {
   show: { opacity: 1, y: 0 }
 }
 
-export default function AchievementsPage() {
+export function AchievementsClient() {
   return (
-    <main className="flex min-h-screen bg-[#102a28] md:bg-[#f7f0f0] text-white md:text-[#102a28] relative overflow-x-hidden">
-      <VerticalLabel isAbsolute className="hidden lg:flex" />
+    <main className="flex min-h-screen bg-[#f7f0f0] text-[#102a28] relative overflow-x-hidden">
+      <VerticalLabel isAbsolute />
       
       <div className="flex-1 flex flex-col md:flex-row relative">
-        {/* Left Side (Light on desktop, Dark on mobile) */}
+        {/* Left Side (Light) - Content */}
         <motion.section 
           initial={{ opacity: 0, x: -20 }} 
           animate={{ opacity: 1, x: 0 }} 
@@ -94,14 +94,14 @@ export default function AchievementsPage() {
         >
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-8">
-              <div className="h-[1px] w-12 bg-white/20 md:bg-brand-dark/20" />
-              <Trophy className="size-6 text-white/30 md:text-brand-dark/30" />
-              <span className="text-[10px] font-bold tracking-[0.5em] text-white/60 md:text-brand-dark/60 uppercase">
+              <div className="h-[1px] w-12 bg-brand-dark/20" />
+              <Trophy className="size-6 text-brand-dark/30" />
+              <span className="text-[10px] font-bold tracking-[0.5em] text-brand-dark/60 uppercase">
                 Nasze sukcesy
               </span>
             </div>
             
-            <h1 className="font-serif text-5xl font-bold tracking-tight text-white md:text-[#102a28] md:text-6xl mb-12">
+            <h1 className="font-serif text-5xl font-bold tracking-tight text-[#102a28] md:text-6xl mb-12">
               Osiągnięcia <br />
               <span className="font-script text-brand-green/80 text-6xl lowercase">i wyróżnienia</span>
             </h1>
@@ -116,7 +116,7 @@ export default function AchievementsPage() {
                 <motion.div 
                   key={idx} 
                   variants={item}
-                  className="group bg-white/5 md:bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-white/10 md:border-brand-dark/5"
+                  className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-brand-dark/5"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-brand-dark/5">
                     <Image
@@ -129,13 +129,13 @@ export default function AchievementsPage() {
                       {achievement.year}
                     </div>
                   </div>
-                  <h3 className="font-serif text-xl font-bold mb-2 text-white md:text-brand-dark group-hover:text-brand-green transition-colors">
+                  <h3 className="font-serif text-xl font-bold mb-2 group-hover:text-brand-green transition-colors">
                     {achievement.title}
                   </h3>
-                  <p className="text-sm text-white/60 md:text-brand-dark/60 leading-relaxed mb-1">
+                  <p className="text-sm text-brand-dark/60 leading-relaxed mb-1">
                     {achievement.event}
                   </p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 md:text-brand-dark/30">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-brand-dark/30">
                     {achievement.location}
                   </p>
                 </motion.div>
@@ -144,7 +144,7 @@ export default function AchievementsPage() {
           </div>
         </motion.section>
 
-        {/* Right Side (Dark Area) - Decorative (Desktop only) */}
+        {/* Right Side (Dark Area) - Decorative */}
         <section className="hidden md:flex w-[35%] bg-[#102a28] relative flex-col justify-end overflow-hidden">
           {/* Organic Wave Layer */}
           <div className="absolute inset-0 z-0 pointer-events-none">
