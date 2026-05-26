@@ -25,7 +25,7 @@ export default async function GardenCenterPage() {
       
       <div>
         {/* Hero Section */}
-        <section className="relative h-[70vh] w-full flex items-center overflow-hidden">
+        <section className="relative h-[50vh] md:h-[70vh] w-full flex items-center overflow-hidden">
           <Image
             src="/images/garden-hero.png"
             alt="Plant Nursery Hero"
@@ -34,13 +34,13 @@ export default async function GardenCenterPage() {
             priority
             unoptimized
           />
-          <div className="container relative z-10 mx-auto px-4">
+          <div className="container relative z-10 mx-auto px-6">
             <header className="max-w-2xl">
-              <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
+              <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
                 Siła roślin <br />
                 <span className="text-brand-cream/80">dla Twojej przestrzeni</span>
               </h1>
-              <p className="text-white/80 text-xl max-w-lg mb-10 leading-relaxed">
+              <p className="text-white/80 text-base md:text-xl max-w-lg mb-0 md:mb-10 leading-relaxed">
                 Znajdź idealne rośliny i dodatki do swojego otoczenia. 
                 Nasza szkółka oferuje najwyższej jakości tuje, sosny oraz rośliny sezonowe.
               </p>
@@ -51,9 +51,9 @@ export default async function GardenCenterPage() {
         </section>
 
         {/* Grid Content */}
-        <div className="container mx-auto px-4 py-24">
-          <div className="mb-12">
-            <h2 className="font-serif text-3xl font-bold mb-2">Poznaj nasze asortyment</h2>
+        <div className="container mx-auto px-4 py-12 md:py-24">
+          <div className="mb-8 md:mb-12">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-2">Poznaj nasze asortyment</h2>
             <div className="h-1 w-12 bg-[#2d5a27]" />
           </div>
           <GardenGrid initialPlants={plants} categories={categories} />
