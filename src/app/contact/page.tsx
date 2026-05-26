@@ -63,8 +63,8 @@ const LocationItem = ({ type, city, address, phone, email }: typeof locations[0]
 
 export default function ContactPage() {
   return (
-    <main className="flex min-h-screen bg-brand-cream overflow-x-hidden">
-      <VerticalLabel />
+    <main className="flex min-h-screen bg-brand-cream overflow-x-hidden text-brand-dark relative">
+      <VerticalLabel isAbsolute />
       
       <div className="flex-1 flex flex-col md:flex-row relative">
         {/* Left Side (Light) */}
@@ -74,14 +74,6 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="flex-1 flex flex-col justify-center px-8 md:px-16 z-10 py-20"
         >
-          <nav className="absolute top-8 left-8 md:left-16 flex gap-6 md:gap-8 text-[10px] font-bold tracking-[0.2em] text-brand-dark/40 uppercase">
-            <Link href="/" className="hover:text-brand-dark transition-colors">Home</Link>
-            <Link href="/garden-center" className="hover:text-brand-dark transition-colors">Garden</Link>
-            <Link href="/fuel" className="hover:text-brand-dark transition-colors">Bio Fuels</Link>
-            <Link href="/about" className="hover:text-brand-dark transition-colors">About</Link>
-            <Link href="/contact" className="text-brand-dark">Contact</Link>
-          </nav>
-
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-brand-dark mb-6 mt-12 md:mt-0">
             Zapraszamy <br />
             <span className="font-script text-brand-green/80 text-6xl lowercase">do kontaktu</span>

@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { TreePine, Flame, ArrowRight, Instagram, Facebook, Mail } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { Navigation } from "@/components/Navigation"
+import { VerticalLabel } from "@/components/VerticalLabel"
 
 export default function Home() {
   return (
@@ -43,7 +45,7 @@ export default function Home() {
         {/* Mid-ground/Front Layer */}
         <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none h-full w-full">
           <Image
-            src="/images/front.png"
+            src="/images/front_bg_pines.png"
             alt="Botanical front elements"
             fill
             className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
@@ -54,25 +56,7 @@ export default function Home() {
         {/* Hero UI Container */}
         <div className="container relative z-20 flex h-full flex-col px-4 pt-[2rem]">
           {/* Left Side Decoration & Info */}
-          <div className="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-8 pointer-events-none hidden lg:flex">
-            <div className="flex flex-col items-center gap-4">
-              <div className="h-16 w-[1px] bg-brand-dark/20" />
-              <TreePine className="size-6 text-brand-dark/30" />
-              <div className="h-16 w-[1px] bg-brand-dark/20" />
-            </div>
-            <span className="[writing-mode:vertical-lr] text-[10px] font-bold tracking-[0.5em] text-brand-dark/60 uppercase rotate-180">
-              Od 1978 roku
-            </span>
-          </div>
-
-          {/* Top Stylized Navigation */}
-          <nav className="flex w-full justify-end gap-8 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase md:gap-12 md:text-xs">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <Link href="/garden-center" className="hover:text-white transition-colors">Garden</Link>
-            <Link href="/fuel" className="hover:text-white transition-colors">Bio Fuels</Link>
-            <Link href="/about" className="hover:text-white transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
-          </nav>
+          <VerticalLabel isAbsolute />
 
           {/* Content Overlay - Positioned Top Right within Dark Area */}
           <div className="mt-20 ml-auto max-w-md text-center md:mt-32">

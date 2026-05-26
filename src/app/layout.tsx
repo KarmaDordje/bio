@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat, Playfair_Display, Great_Vibes } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Navigation } from "@/components/Navigation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -33,8 +34,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("antialiased", montserrat.variable, playfair.variable, script.variable)}>
+    <html lang="en" className={cn("antialiased", montserrat.variable, playfair.variable, script.variable)} suppressHydrationWarning>
       <body className="font-sans">
+        <Navigation />
         {children}
       </body>
     </html>

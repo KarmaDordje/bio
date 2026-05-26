@@ -1,3 +1,5 @@
+"use server";
+
 import { client } from "@/sanity/lib/client";
 
 export type Category = {
@@ -32,6 +34,46 @@ export async function getPlants(): Promise<Plant[]> {
   `);
 }
 
+export async function getPaginatedPlants(
+  category: string = "All",
+  page: number = 1,
+  limit: number = 12
+): Promise<Plant[]> {
+  const start = (page - 1) * limit;
+  const end = start + limit;
+
+  const categoryFilter = category !== "All" ? `&& category->title == "${category}"` : "";
+
+  try {
+    const query = `*[_type == "plant" ${categoryFilter}] | order(species asc, varietyName asc) [${start}...${end}] {
+      _id,
+      varietyName,
+      species,
+      latinName,
+      characteristics,
+      price,
+      "imageUrl": image.asset->url,
+      "category": category->title
+    }`;
+    console.log("Fetching plants with query:", query);
+    const results = await client.fetch(query);
+    console.log(`Fetched ${results.length} plants`);
+    return results;
+  } catch (error) {
+    console.error("Sanity fetch error in getPaginatedPlants:", error);
+    throw error;
+  }
+}
+
 export async function getCategories(): Promise<Category[]> {
-  return await client.fetch(`*[_type == "plantCategory"]{ _id, title, "slug": slug.current }`);
+  try {
+    const query = `*[_type == "plantCategory"]{ _id, title, "slug": slug.current }`;
+    console.log("Fetching categories with query:", query);
+    const results = await client.fetch(query);
+    console.log(`Fetched ${results.length} categories`);
+    return results;
+  } catch (error) {
+    console.error("Sanity fetch error in getCategories:", error);
+    throw error;
+  }
 }
